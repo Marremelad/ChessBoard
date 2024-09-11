@@ -1,4 +1,8 @@
-﻿using System.ComponentModel;
+﻿//Lab 2 - Schackbräde
+// Mauricio Corte
+// NET24
+
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Numerics;
 
