@@ -14,11 +14,12 @@ namespace ChessBoard
             bool isNumber; //Used to validate whether the input is valid.
 
             string? whiteTiles = "◼︎"; //Default symbols for white and black tiles on the chessboard.
-            string ? blackTiles = "◻︎";
-            string piece = "🙂"; //Represents the piece to be placed on the board, defaulting to "🙂".
+            string? blackTiles = "◻︎";
+            string? piece; //Represents the piece to be placed on the board.
+
 
             //Get Chessboard Size from User:
-            
+
             do { //This loop asks the user to input the size of the chessboard (for example 8 for 8x8).
                 Console.WriteLine("Please enter size of chessboard"); 
                 string? numberOfSquares = Console.ReadLine();
@@ -28,7 +29,7 @@ namespace ChessBoard
             //Ask for Custom Tiles:
 
             Console.WriteLine("Do you want custom tiles? y/n"); //The user is prompted to choose if they they want custom symbols for the tiles.
-            string? answer = Console.ReadLine(); ////Holds the user's response for custom tiles.
+            string? answer = Console.ReadLine(); //Holds the user's response.
 
 
             if (answer?.ToLower() == "y") { //If "y" is entered, the user can input their desired symbols for the white and black tiles.
@@ -37,6 +38,19 @@ namespace ChessBoard
 
                     Console.WriteLine("What should the black tiles be?");
                     blackTiles  = Console.ReadLine();
+            }
+
+            //Ask for custom piece:
+
+            Console.WriteLine("Do you want a custom piece? y/n"); //The user is prompted to choose if they they want a custom symbol for the piece.
+            answer = Console.ReadLine(); //Holds the user's respose.
+
+            if (answer != null && answer == "y") { // "y" is entered the user can input their desired symbol for the piece.
+                Console.WriteLine("What sshould the piece be");
+                piece = Console.ReadLine();
+            }
+            else {
+                piece = "🙂"; //Default value for the piece.
             }
             
 
