@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoard", "ChessBoard.csproj", "{1665E716-9C4B-4591-A8D1-6B587C6422D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessBoard", "ChessBoard.csproj", "{1665E716-9C4B-4591-A8D1-6B587C6422D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlacePiece", "..\PlacePiece\PlacePiece.csproj", "{A1806D87-DFFF-4CFF-9659-1E62D6ACDCC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RanksAndFiles", "..\RanksAndFiles\RanksAndFiles.csproj", "{727DB36B-4D46-4F59-AD44-9C4681E91E68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{1665E716-9C4B-4591-A8D1-6B587C6422D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1665E716-9C4B-4591-A8D1-6B587C6422D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1665E716-9C4B-4591-A8D1-6B587C6422D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1806D87-DFFF-4CFF-9659-1E62D6ACDCC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1806D87-DFFF-4CFF-9659-1E62D6ACDCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1806D87-DFFF-4CFF-9659-1E62D6ACDCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1806D87-DFFF-4CFF-9659-1E62D6ACDCC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727DB36B-4D46-4F59-AD44-9C4681E91E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727DB36B-4D46-4F59-AD44-9C4681E91E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727DB36B-4D46-4F59-AD44-9C4681E91E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727DB36B-4D46-4F59-AD44-9C4681E91E68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
