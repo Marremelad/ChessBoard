@@ -1,6 +1,6 @@
 ﻿//Lab 2 - Schackbräde
-// Mauricio Corte
-// NET24
+//Mauricio Corte
+//.NET24
 
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -17,8 +17,8 @@ namespace ChessBoard
             int boardSize = 0; //Holds the size of the chessboard.
             bool isNumber; //Used to validate whether the input is valid.
 
-            string? whiteTiles = "◼︎"; //Default symbols for white and black tiles on the chessboard.
-            string? blackTiles = "◻︎";
+            string? whiteTiles = "◼"; //Default symbols for white and black tiles on the chessboard.
+            string? blackTiles = "◻";
             string? piece; //Represents the piece to be placed on the board.
 
 
