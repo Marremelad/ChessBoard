@@ -1,2 +1,2 @@
 # ChessBoard
-Andra labben i kursen Programmering med C#.
+Andra labben i kursen, Programmering med C#.
