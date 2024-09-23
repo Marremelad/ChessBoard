@@ -65,7 +65,7 @@ namespace ChessBoard
 
             //Chessboard Generation:
 
-            for (int i = boardSize ; i > 0; i--) { //Outer Loop (i): Iterates over the rows of the chessboard.
+            for (int i = boardSize ; i > 0; i--) { //Outer Loop (i): Iterates over the rows of the chessboard. Also makes sure that the chessboard is flipped correctly (a1 at the bottom left).
                 int row = i; //Represents the row number.
 
                 for (int j = 0; j < boardSize; j++) { //Inner Loop (j): Iterates over the columns of each row.
