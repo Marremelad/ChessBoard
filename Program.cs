@@ -2,10 +2,6 @@
 //Mauricio Corte
 //.NET24
 
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Numerics;
-
 namespace ChessBoard
 {
     internal class Program
@@ -32,7 +28,7 @@ namespace ChessBoard
 
             //Ask for Custom Tiles:
 
-            Console.WriteLine("Do you want custom tiles? y/n"); //The user is prompted to choose if they they want custom symbols for the tiles.
+            Console.WriteLine("Do you want custom tiles? y/n"); //The user is prompted to choose if they want custom symbols for the tiles.
             string? answer = Console.ReadLine(); //Holds the user's response.
 
 
@@ -46,21 +42,20 @@ namespace ChessBoard
 
             //Ask for custom piece:
 
-            Console.WriteLine("Do you want a custom piece? y/n"); //The user is prompted to choose if they they want a custom symbol for the piece.
-            answer = Console.ReadLine(); //Holds the user's respose.
+            Console.WriteLine("Do you want a custom piece? y/n"); //The user is prompted to choose if they want a custom symbol for the piece.
+            answer = Console.ReadLine(); //Holds the user's response.
 
             if (answer != null && answer == "y") { // "y" is entered the user can input their desired symbol for the piece.
-                Console.WriteLine("What sshould the piece be");
+                Console.WriteLine("What should the piece be");
                 piece = Console.ReadLine();
             }
             else {
                 piece = "🙂"; //Default value for the piece.
             }
             
-
             //Get Piece Placement:
 
-            Console.WriteLine("Where do you want to place your piece?"); //The user is asked where they want to place their piece on the board (for example "a1", "b2", etc).
+            Console.WriteLine("Where do you want to place your piece?"); //The user is asked where they want to place their piece on the board (for example "a1", "b2", etc.).
             string? placement = Console.ReadLine();
 
             //Chessboard Generation:
@@ -69,7 +64,7 @@ namespace ChessBoard
                 int row = i; //Represents the row number.
 
                 for (int j = 0; j < boardSize; j++) { //Inner Loop (j): Iterates over the columns of each row.
-                    int column = j + 97; //Converts the column number into a ASCII character number.
+                    int column = j + 97; //Converts the column number into an ASCII character number.
                     string position = $"{(char)(column)}{row}"; //Current row and column are added together to create a position like a1, b2 etc. 
 
                     if (placement?.ToLower() == position) { //If the user's specified piece placement matches the current position, it prints the piece (🙂).
