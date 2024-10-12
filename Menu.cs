@@ -58,7 +58,8 @@ public class Menu
                 case "Generate Board":
                     Board.GenerateChessBoard(_boardSize, _tiles, _piece, _placement); // Generate the chess board with the specified parameters.
                     return; // Exit the options menu after generating the board.
-                case "Exit": 
+                case "Exit":
+                    Console.WriteLine("Thank you for using the Chess Board Generator!");
                     return; // Exit program before generation a board.
             }
         }
