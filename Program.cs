@@ -8,7 +8,7 @@ namespace ChessBoard
     {
         static void Main(string[] args)
         {
-            Menu.MainMenu();
+            Menu.MainMenu(); // Initiate program.
         }
     }
 }
