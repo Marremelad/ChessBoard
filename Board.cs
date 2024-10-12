@@ -82,9 +82,7 @@ public abstract class Board
                 }
                 else
                 {
-                    Console.Write((i + j) % 2 == 0
-                        ? tiles.Item1
-                        : tiles.Item2);
+                    Console.Write((i + j) % 2 == 0 ? tiles.Item1 : tiles.Item2);
                 }
                 Console.Write(" ");
             }
