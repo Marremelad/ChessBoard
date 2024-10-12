@@ -18,9 +18,6 @@ public abstract class Board
         while (!int.TryParse(Console.ReadLine(), out boardSize) || boardSize is < 1 or > 8)
         {
             Console.WriteLine("Invalid input. Board size must be an integer between 1 and 8.");
-            /*Console.WriteLine("Please enter size of board with an integer between 1 and 8.");
-            if (int.TryParse(Console.ReadLine(), out boardSize) && boardSize is > 0 and < 9) break;
-            else Console.WriteLine("Invalid input");*/
         }
 
         return boardSize;
@@ -72,6 +69,11 @@ public abstract class Board
         }
         
         return placement;
+    }
+
+    public static void GenerateChessBoard()
+    {
+        
     }
     
     
