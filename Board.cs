@@ -52,6 +52,7 @@ public abstract class Board
     // Method to generate and display the chess board.
     public static void GenerateChessBoard(int boardSize, (string, string) tiles, string piece, string placement)
     {
+        Console.Clear();
         for (int i = boardSize; i > 0; i--)
         {
             int row = i; // Variable for the current row.
