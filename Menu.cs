@@ -5,9 +5,18 @@ namespace ChessBoard;
 public class Menu
 {
     private static int _boardSize = 8; // Default board size initialized to 8.
+    
     private static (string Black, string White) _tiles = ("◼", "◻"); // Default tile colors for the board.
+    
     private static string _piece = "\u2656"; // Default piece representation (white rook).
+    
     private static string _placement = "A1"; // Default placement for the piece.
+    
+    private static string _displayValues = $"Board Size: {_boardSize}\n" + // string to display the current values.
+                                           $"White Tiles: {_tiles.White}\n" +
+                                           $"Black Tiles {_tiles.Black}\n" +
+                                           $"Piece: {_piece}\n" +
+                                           $"Placement: {_placement.ToUpper()}";
 
     // Method to display the main menu and handle user choices.
     public static void MainMenu()
@@ -35,6 +44,8 @@ public class Menu
         while (true)
         {
             Console.Clear(); // Clear the console for fresh display.
+            Console.WriteLine(_displayValues); // Display the current values that the generated board will have.
+            
             var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("\nCustomize your board!") // Placeholder title for options menu.
