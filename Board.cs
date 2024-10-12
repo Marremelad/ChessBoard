@@ -4,83 +4,88 @@ namespace ChessBoard;
 
 public abstract class Board
 {
+    // Method to get the size of the chess board from user input.
     public static int GetBoardSize()
     {
         Console.WriteLine("Please enter board size.");
-        int boardSize;
+        int boardSize; // Variable to store the board size input by the user.
         while (!int.TryParse(Console.ReadLine(), out boardSize) || boardSize is < 1 or > 8)
         {
             Console.WriteLine("Invalid input. Board size must be an integer between 1 and 8.");
         }
 
-        return boardSize;
+        return boardSize; // Return the valid board size.
     }
 
+    // Method to get custom tiles for the chess board from user input.
     public static (string, string) GetCustomTiles()
     {
         Console.WriteLine("Do you want custom tiles for your board? (y/n)");
-        string? userInput = Console.ReadLine()?.ToLower();
+        string? userInput = Console.ReadLine()?.ToLower(); // User input to determine if custom tiles are wanted.
 
         if (userInput != "y")
         {
-            return ("◼", "◻");
-           
+            return ("◼", "◻"); // Default tile values if custom tiles are not requested.
         }
 
-        string? customTile;
-        
-        Console.WriteLine("What should the white tiles be?");
-        string whiteTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◼" : customTile;
-            
-        Console.WriteLine("What should the black tile be?");
-        string blackTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◻" : customTile;
+        string? customTile; // Variable to hold the custom tile input.
 
-        return (whiteTile, blackTile);
+        Console.WriteLine("What should the white tiles be?");
+        string whiteTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◼" : customTile; // Get white tile or default.
+
+        Console.WriteLine("What should the black tile be?");
+        string blackTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◻" : customTile; // Get black tile or default.
+
+        return (whiteTile, blackTile); // Return the custom tiles.
     }
 
+    // Method to get a custom chess piece from user input.
     public static string GetCustomPiece()
     {
         Console.WriteLine("What should the custom piece be?");
-        string? piece;
-        return string.IsNullOrEmpty(piece = Console.ReadLine()) ? "\u2656" : piece;
+        string? piece; // Variable to store the custom piece input.
+        return string.IsNullOrEmpty(piece = Console.ReadLine()) ? "\u2656" : piece; // Return custom piece or default.
     }
 
+    // Method to get the placement of a piece on the chess board from user input.
     public static string GetPiecePlacement()
     {
-        Regex regex = new Regex(@"^[A-Ha-h][1-8]$");
-        
+        Regex regex = new Regex(@"^[A-Ha-h][1-8]$"); // Regex to validate chess board positions.
+
         Console.WriteLine("Where do you wan to place your piece? (e.g., A1, H8).");
-        string? placement;
+        string? placement; // Variable to store the placement input.
         while (string.IsNullOrEmpty(placement = Console.ReadLine()) || !regex.IsMatch(placement))
         {
             Console.WriteLine("Invalid input. Please enter a valid position (e.g., A1, H8).");
         }
-        
-        return placement;
+
+        return placement; // Return the valid piece placement.
     }
 
+    // Method to generate and display the chess board.
     public static void GenerateChessBoard(int boardSize, (string, string) tiles, string piece, string placement)
     {
         for (int i = boardSize; i > 0; i--)
-        { 
-            int row = i; 
+        {
+            int row = i; // Variable for the current row.
 
             for (int j = 0; j < boardSize; j++)
-            { 
-                int column = j + 97;
-                string position = $"{(char)(column)}{row}"; 
+            {
+                int column = j + 97; // Calculate ASCII value for column letters (a-h).
+                string position = $"{(char)(column)}{row}"; // Create the position string (e.g., A1).
 
                 if (placement?.ToLower() == position)
-                { 
-                    Console.Write(piece);
+                {
+                    Console.Write(piece); // Place the custom piece if the position matches.
                 }
                 else
                 {
+                    // Print the appropriate tile based on the current position.
                     Console.Write((i + j) % 2 == 0 ? tiles.Item1 : tiles.Item2);
                 }
-                Console.Write(" ");
+                Console.Write(" "); // Print a space for formatting.
             }
-            Console.WriteLine();
+            Console.WriteLine(); // Move to the next line after finishing a row.
         }
     }
-}    
+}
