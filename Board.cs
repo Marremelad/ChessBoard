@@ -7,7 +7,7 @@ public abstract class Board
     // Method to get the size of the chess board from user input.
     public static int GetBoardSize()
     {
-        Console.WriteLine("\n Please enter desired board size.");
+        Console.WriteLine("\n Please enter a desired board size between 1 and 8.");
         int.TryParse(Console.ReadLine(), out int boardSize);
         return boardSize is > 0 and < 9 ? boardSize : 8;
     }
@@ -20,7 +20,7 @@ public abstract class Board
         Console.WriteLine("\nWhat should the white tiles be?");
         string whiteTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◼" : customTile; // Get white tile or default.
 
-        Console.WriteLine("\nWhat should the black tile be?");
+        Console.WriteLine("What should the black tile be?");
         string blackTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◻" : customTile; // Get black tile or default.
 
         return (whiteTile, blackTile); // Return the custom tiles.

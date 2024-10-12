@@ -38,7 +38,7 @@ public class Menu
         while (true)
         {
             Console.Clear(); // Clear the console for fresh display.
-            Console.WriteLine($"Current Board Size: {_boardSize}\nWhite Tiles: {_tiles.White}\nBlack Tiles: {_tiles.Black}\nPiece: {_piece}: Placement: {_placement}"); // Display current board parameters.
+            Console.WriteLine($"\nCurrent Board Size: {_boardSize}\nWhite Tiles: {_tiles.White}\nBlack Tiles: {_tiles.Black}\nPiece: {_piece}\nPlacement: {_placement}"); // Display current board parameters.
            
             var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
