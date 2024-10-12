@@ -1,6 +1,4 @@
-﻿using System.Net;
-using System.Text.RegularExpressions;
-using System.Xml;
+﻿using System.Text.RegularExpressions;
 
 namespace ChessBoard;
 
@@ -42,20 +40,21 @@ public abstract class Board
 
     public static string GetCustomPiece()
     {
-        Console.WriteLine("Do you want a custom piece?");
+        Console.WriteLine("Do you want a custom piece?(y/n)");
         
         string? userInput = Console.ReadLine()?.ToLower();
-        if (userInput != "y") return "🙂";
+        if (userInput != "y") return "\u2656";
 
+        Console.WriteLine("What should the piece be?");
         string? piece = Console.ReadLine();
-        return string.IsNullOrEmpty(piece) ? "🙂" : piece;
+        return string.IsNullOrEmpty(piece) ? "\u2656" : piece;
     }
 
     public static string GetPiecePlacement()
     {
-        Regex regex = new Regex(@"^[A-H][1-8]$");
-
-        Console.WriteLine("Where do you wan to place your piece?");
+        Regex regex = new Regex(@"^[A-Ha-h][1-8]$");
+        
+        Console.WriteLine("Where do you wan to place your piece? (e.g., A1, H8).");
 
         string? placement;
         while (string.IsNullOrEmpty(placement = Console.ReadLine()) || !regex.IsMatch(placement))
@@ -66,34 +65,30 @@ public abstract class Board
         return placement;
     }
 
-    public static void GenerateChessBoard(int boardSize, string placement, string piece, (string, string) tiles)
+    public static void GenerateChessBoard(int boardSize, (string, string) tiles, string piece, string placement)
     {
         for (int i = boardSize; i > 0; i--)
-        { //Outer Loop (i): Iterates over the rows of the chessboard. Also makes sure that the chessboard is flipped correctly (a1 at the bottom left).
-            int row = i; //Represents the row number.
+        { 
+            int row = i; 
 
             for (int j = 0; j < boardSize; j++)
-            { //Inner Loop (j): Iterates over the columns of each row.
-                int column = j + 97; //Converts the column number into an ASCII character number.
-                string
-                    position =
-                        $"{(char)(column)}{row}"; //Current row and column are added together to create a position like a1, b2 etc. 
+            { 
+                int column = j + 97;
+                string position = $"{(char)(column)}{row}"; 
 
                 if (placement?.ToLower() == position)
-                { //If the user's specified piece placement matches the current position, it prints the piece (🙂).
+                { 
                     Console.Write(piece);
                 }
                 else
                 {
                     Console.Write((i + j) % 2 == 0
                         ? tiles.Item1
-                        : tiles.Item2); //Otherwise, it prints the white or black tile based on the current square’s position (alternating between them using (i + j) % 2).
+                        : tiles.Item2);
                 }
+                Console.Write(" ");
             }
-
-            Console.WriteLine(); //Prints a new line after each row.
+            Console.WriteLine();
         }
     }
-    
-    
 }    
