@@ -8,7 +8,7 @@ namespace ChessBoard
     {
         static void Main(string[] args)
         {
-            Board.GenerateChessBoard(Board.GetBoardSize(), Board.GetCustomTiles(), Board.GetCustomPiece(), Board.GetPiecePlacement());
+            Menu.MainMenu();
         }
     }
 }
