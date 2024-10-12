@@ -7,7 +7,7 @@ public abstract class Board
     // Method to get the size of the chess board from user input.
     public static int GetBoardSize()
     {
-        Console.WriteLine("\n Please enter a desired board size between 1 and 8.");
+        Console.WriteLine("\nPlease enter a desired board size between 1 and 8.");
         int.TryParse(Console.ReadLine(), out int boardSize);
         return boardSize is > 0 and < 9 ? boardSize : 8;
     }
