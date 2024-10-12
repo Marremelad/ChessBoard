@@ -39,7 +39,7 @@ public abstract class Board
     {
         Regex regex = new Regex(@"^[A-Ha-h][1-8]$"); // Regex to validate chess board positions.
 
-        Console.WriteLine("\nWhere do you wan to place your piece? (e.g., A1, H8).\nPress enter for default value.");
+        Console.WriteLine("\nWhere do you want to place your piece? (e.g., A1, H8).\nPress enter for default value.");
         string? placement; // Variable to store the placement input.
         while (string.IsNullOrEmpty(placement = Console.ReadLine()) || !regex.IsMatch(placement))
         {
