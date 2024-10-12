@@ -4,6 +4,11 @@ namespace ChessBoard;
 
 public class Menu
 {
+    private static int _boardSize = 8;
+    private static (string, string) _tiles = ("◼", "◻");
+    private static string _piece = "\u2656";
+    private static string _placement = "A1";
+    
     public static void MainMenu()
     {
         var choice = AnsiConsole.Prompt(
@@ -25,32 +30,34 @@ public class Menu
 
     private static void GenerationOptionsMenu()
     {
-        int boardSize = 8;
-        var tiles = ("◼", "◻");
-        string piece = "\u2656";
-        string placement = "A1";
-        
+        Console.Clear();
         var choice = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
                 .Title("Placeholder")
                 .PageSize(10)
-                .AddChoices("Board Size", "Custom Tiles", "Custom Piece", "Generate Standard Board"));
-
+                .AddChoices("Board Size", "Custom Tiles", "Custom Piece","Piece Placement", "Generate Board"));
+        
         switch (choice)
         {
             case "Board Size":
-                boardSize = Board.GetBoardSize();
+                _boardSize = Board.GetBoardSize();
+                GenerationOptionsMenu();
                 break;
             case "Custom Tiles":
-                tiles = Board.GetCustomTiles();
+                _tiles = Board.GetCustomTiles();
+                GenerationOptionsMenu();
                 break;
             case "Custom Piece":
-                piece = Board.GetCustomPiece();
+                _piece = Board.GetCustomPiece();
+                GenerationOptionsMenu();
                 break;
-            case "Generate Standard Board":
+            case "Piece Placement":
+                _placement = Board.GetPiecePlacement();
+                GenerationOptionsMenu();
+                break;
+            case "Generate Board":
+                Board.GenerateChessBoard(_boardSize, _tiles, _piece, _placement);
                 break;
         }
-        Board.GenerateChessBoard(boardSize, tiles, piece, placement);
-
     }
 }
