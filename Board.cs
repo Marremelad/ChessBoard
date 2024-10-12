@@ -7,7 +7,7 @@ public abstract class Board
     // Method to get the size of the chess board from user input.
     public static int GetBoardSize()
     {
-        Console.WriteLine("\nPlease enter a desired board size between 1 and 8.");
+        Console.WriteLine("\nPlease enter a desired board size between 1 and 8.\nPress enter for default value.");
         int.TryParse(Console.ReadLine(), out int boardSize);
         return boardSize is > 0 and < 9 ? boardSize : 8;
     }
@@ -17,10 +17,10 @@ public abstract class Board
     {
         string? customTile; // Variable to hold the custom tile input.
 
-        Console.WriteLine("\nWhat should the white tiles be?");
+        Console.WriteLine("\nWhat should the white tiles be?\nPress enter for default value.");
         string whiteTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◼" : customTile; // Get white tile or default.
 
-        Console.WriteLine("What should the black tile be?");
+        Console.WriteLine("What should the black tile be?\nPress enter for default value.");
         string blackTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◻" : customTile; // Get black tile or default.
 
         return (whiteTile, blackTile); // Return the custom tiles.
@@ -29,7 +29,7 @@ public abstract class Board
     // Method to get a custom chess piece from user input.
     public static string GetCustomPiece()
     {
-        Console.WriteLine("\nWhat should the custom piece be?");
+        Console.WriteLine("\nWhat should the custom piece be?\nPress enter for default value.");
         string? piece; // Variable to store the custom piece input.
         return string.IsNullOrEmpty(piece = Console.ReadLine()) ? "\u2656" : piece; // Return custom piece or default.
     }
@@ -39,11 +39,11 @@ public abstract class Board
     {
         Regex regex = new Regex(@"^[A-Ha-h][1-8]$"); // Regex to validate chess board positions.
 
-        Console.WriteLine("\nWhere do you wan to place your piece? (e.g., A1, H8).");
+        Console.WriteLine("\nWhere do you wan to place your piece? (e.g., A1, H8).\nPress enter for default value.");
         string? placement; // Variable to store the placement input.
         while (string.IsNullOrEmpty(placement = Console.ReadLine()) || !regex.IsMatch(placement))
         {
-            Console.WriteLine("\nInvalid input. Please enter a valid position (e.g., A1, H8).");
+            Console.WriteLine("Invalid input. Please enter a valid position (e.g., A1, H8).");
         }
 
         return placement; // Return the valid piece placement.
