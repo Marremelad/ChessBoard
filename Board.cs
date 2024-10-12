@@ -40,14 +40,9 @@ public abstract class Board
 
     public static string GetCustomPiece()
     {
-        Console.WriteLine("Do you want a custom piece?(y/n)");
-        
-        string? userInput = Console.ReadLine()?.ToLower();
-        if (userInput != "y") return "\u2656";
-
-        Console.WriteLine("What should the piece be?");
-        string? piece = Console.ReadLine();
-        return string.IsNullOrEmpty(piece) ? "\u2656" : piece;
+        Console.WriteLine("What should the custom piece be?");
+        string? piece;
+        return string.IsNullOrEmpty(piece = Console.ReadLine()) ? "\u2656" : piece;
     }
 
     public static string GetPiecePlacement()
@@ -55,7 +50,6 @@ public abstract class Board
         Regex regex = new Regex(@"^[A-Ha-h][1-8]$");
         
         Console.WriteLine("Where do you wan to place your piece? (e.g., A1, H8).");
-
         string? placement;
         while (string.IsNullOrEmpty(placement = Console.ReadLine()) || !regex.IsMatch(placement))
         {
