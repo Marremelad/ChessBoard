@@ -5,7 +5,7 @@ namespace ChessBoard;
 public class Menu
 {
     private static int _boardSize = 8;
-    private static (string, string) _tiles = ("◼", "◻");
+    private static (string Black, string White) _tiles = ("◼", "◻");
     private static string _piece = "\u2656";
     private static string _placement = "A1";
     
@@ -30,34 +30,33 @@ public class Menu
 
     private static void GenerationOptionsMenu()
     {
-        Console.Clear();
-        var choice = AnsiConsole.Prompt(
-            new SelectionPrompt<string>()
-                .Title("Placeholder")
-                .PageSize(10)
-                .AddChoices("Board Size", "Custom Tiles", "Custom Piece","Piece Placement", "Generate Board"));
-        
-        switch (choice)
+        while (true)
         {
-            case "Board Size":
-                _boardSize = Board.GetBoardSize();
-                GenerationOptionsMenu();
-                break;
-            case "Custom Tiles":
-                _tiles = Board.GetCustomTiles();
-                GenerationOptionsMenu();
-                break;
-            case "Custom Piece":
-                _piece = Board.GetCustomPiece();
-                GenerationOptionsMenu();
-                break;
-            case "Piece Placement":
-                _placement = Board.GetPiecePlacement();
-                GenerationOptionsMenu();
-                break;
-            case "Generate Board":
-                Board.GenerateChessBoard(_boardSize, _tiles, _piece, _placement);
-                break;
+            Console.Clear();
+            var choice = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("Placeholder")
+                    .PageSize(10)
+                    .AddChoices("Board Size", "Custom Tiles", "Custom Piece","Piece Placement", "Generate Board"));
+        
+            switch (choice)
+            {
+                case "Board Size":
+                    _boardSize = Board.GetBoardSize();
+                    break;
+                case "Custom Tiles":
+                    _tiles = Board.GetCustomTiles();
+                    break;
+                case "Custom Piece":
+                    _piece = Board.GetCustomPiece();
+                    break;
+                case "Piece Placement":
+                    _placement = Board.GetPiecePlacement();
+                    break;
+                case "Generate Board":
+                    Board.GenerateChessBoard(_boardSize, _tiles, _piece, _placement);
+                    return;
+            }
         }
     }
 }
