@@ -20,14 +20,6 @@ public abstract class Board
     // Method to get custom tiles for the chess board from user input.
     public static (string, string) GetCustomTiles()
     {
-        Console.WriteLine("Do you want custom tiles for your board? (y/n)");
-        string? userInput = Console.ReadLine()?.ToLower(); // User input to determine if custom tiles are wanted.
-
-        if (userInput != "y")
-        {
-            return ("◼", "◻"); // Default tile values if custom tiles are not requested.
-        }
-
         string? customTile; // Variable to hold the custom tile input.
 
         Console.WriteLine("What should the white tiles be?");
