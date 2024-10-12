@@ -5,12 +5,9 @@ namespace ChessBoard;
 
 public abstract class Board
 {
-    public static int BoardSize;
-    public static string? WhiteTile;
-    public static string? BlackTile;
-    public static string? Piece = "🙂";
+    private static string? _whiteTile;
+    private static string? _blackTile;
     
-
     public static int GetBoardSize()
     {
         Console.WriteLine("Please enter board size.");
@@ -30,18 +27,18 @@ public abstract class Board
 
         if (userInput != "y")
         {
-            WhiteTile = "◼";
-            BlackTile = "◻";
+            _whiteTile = "◼";
+            _blackTile = "◻";
         }
         else
         {
             Console.WriteLine("What should the white tiles be?");
             string? customTile = Console.ReadLine();
-            WhiteTile = string.IsNullOrEmpty(customTile) ? "◼" : customTile;
+            _whiteTile = string.IsNullOrEmpty(customTile) ? "◼" : customTile;
             
             Console.WriteLine("What should the black tile be?");
             customTile = Console.ReadLine();
-            BlackTile = string.IsNullOrEmpty(customTile) ? "◻" : customTile;
+            _blackTile = string.IsNullOrEmpty(customTile) ? "◻" : customTile;
         }
     }
 
@@ -71,10 +68,34 @@ public abstract class Board
         return placement;
     }
 
-    public static void GenerateChessBoard()
+    public static void GenerateChessBoard(int boardSize, string placement, string piece)
     {
-        
+        for (int i = boardSize; i > 0; i--)
+        { //Outer Loop (i): Iterates over the rows of the chessboard. Also makes sure that the chessboard is flipped correctly (a1 at the bottom left).
+            int row = i; //Represents the row number.
+
+            for (int j = 0; j < boardSize; j++)
+            { //Inner Loop (j): Iterates over the columns of each row.
+                int column = j + 97; //Converts the column number into an ASCII character number.
+                string
+                    position =
+                        $"{(char)(column)}{row}"; //Current row and column are added together to create a position like a1, b2 etc. 
+
+                if (placement?.ToLower() == position)
+                { //If the user's specified piece placement matches the current position, it prints the piece (🙂).
+                    Console.Write(piece);
+                }
+                else
+                {
+                    Console.Write((i + j) % 2 == 0
+                        ? _whiteTile
+                        : _blackTile); //Otherwise, it prints the white or black tile based on the current square’s position (alternating between them using (i + j) % 2).
+                }
+            }
+
+            Console.WriteLine(); //Prints a new line after each row.
+        }
     }
     
     
-}   
+}    
