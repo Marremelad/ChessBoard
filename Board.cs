@@ -7,11 +7,11 @@ public abstract class Board
     // Method to get the size of the chess board from user input.
     public static int GetBoardSize()
     {
-        Console.WriteLine("Please enter board size.");
+        Console.WriteLine("\nPlease enter board size.");
         int boardSize; // Variable to store the board size input by the user.
         while (!int.TryParse(Console.ReadLine(), out boardSize) || boardSize is < 1 or > 8)
         {
-            Console.WriteLine("Invalid input. Board size must be an integer between 1 and 8.");
+            Console.WriteLine("\nInvalid input. Board size must be an integer between 1 and 8.");
         }
 
         return boardSize; // Return the valid board size.
@@ -22,10 +22,10 @@ public abstract class Board
     {
         string? customTile; // Variable to hold the custom tile input.
 
-        Console.WriteLine("What should the white tiles be?");
+        Console.WriteLine("\nWhat should the white tiles be?");
         string whiteTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◼" : customTile; // Get white tile or default.
 
-        Console.WriteLine("What should the black tile be?");
+        Console.WriteLine("\nWhat should the black tile be?");
         string blackTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◻" : customTile; // Get black tile or default.
 
         return (whiteTile, blackTile); // Return the custom tiles.
@@ -34,7 +34,7 @@ public abstract class Board
     // Method to get a custom chess piece from user input.
     public static string GetCustomPiece()
     {
-        Console.WriteLine("What should the custom piece be?");
+        Console.WriteLine("\nWhat should the custom piece be?");
         string? piece; // Variable to store the custom piece input.
         return string.IsNullOrEmpty(piece = Console.ReadLine()) ? "\u2656" : piece; // Return custom piece or default.
     }
@@ -44,11 +44,11 @@ public abstract class Board
     {
         Regex regex = new Regex(@"^[A-Ha-h][1-8]$"); // Regex to validate chess board positions.
 
-        Console.WriteLine("Where do you wan to place your piece? (e.g., A1, H8).");
+        Console.WriteLine("\nWhere do you wan to place your piece? (e.g., A1, H8).");
         string? placement; // Variable to store the placement input.
         while (string.IsNullOrEmpty(placement = Console.ReadLine()) || !regex.IsMatch(placement))
         {
-            Console.WriteLine("Invalid input. Please enter a valid position (e.g., A1, H8).");
+            Console.WriteLine("\nInvalid input. Please enter a valid position (e.g., A1, H8).");
         }
 
         return placement; // Return the valid piece placement.
