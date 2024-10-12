@@ -14,7 +14,7 @@ public class Menu
     {
         var choice = AnsiConsole.Prompt(
             new SelectionPrompt<string>()
-                .Title("Welcome to the Chess Board Generator!")
+                .Title("\nWelcome to the Chess Board Generator!")
                 .PageSize(10)
                 .AddChoices("Generate board", "Exit"));
 
@@ -37,9 +37,9 @@ public class Menu
             Console.Clear(); // Clear the console for fresh display.
             var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    .Title("Placeholder") // Placeholder title for options menu.
+                    .Title("\nCustomize your board!") // Placeholder title for options menu.
                     .PageSize(10)
-                    .AddChoices("Board Size", "Custom Tiles", "Custom Piece", "Piece Placement", "Generate Board"));
+                    .AddChoices("Board Size", "Custom Tiles", "Custom Piece", "Piece Placement", "Generate Board", "Exit"));
         
             switch (choice)
             {
@@ -58,6 +58,8 @@ public class Menu
                 case "Generate Board":
                     Board.GenerateChessBoard(_boardSize, _tiles, _piece, _placement); // Generate the chess board with the specified parameters.
                     return; // Exit the options menu after generating the board.
+                case "Exit": 
+                    return; // Exit program before generation a board.
             }
         }
     }
