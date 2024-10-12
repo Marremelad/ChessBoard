@@ -6,7 +6,7 @@ public class Menu
 {
     private static int _boardSize = 8; // Default board size initialized to 8.
     
-    private static (string Black, string White) _tiles = ("◼", "◻"); // Default tile colors for the board.
+    private static (string White, string Black) _tiles = ("\u25fc", "\u25fb"); // Default tile colors for the board.
     
     private static string _piece = "\u2656"; // Default piece representation (white rook).
     
