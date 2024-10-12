@@ -24,7 +24,7 @@ public class Menu
                 GenerationOptionsMenu(); // Navigate to the options menu for board generation.
                 break;
             case "Exit":
-                Console.WriteLine("Thank you for using the Chess Board Generator!"); // Exit message.
+                Console.WriteLine("\nThank you for using the Chess Board Generator!"); // Exit message.
                 break;
         }
     }
@@ -59,7 +59,7 @@ public class Menu
                     Board.GenerateChessBoard(_boardSize, _tiles, _piece, _placement); // Generate the chess board with the specified parameters.
                     return; // Exit the options menu after generating the board.
                 case "Exit":
-                    Console.WriteLine("Thank you for using the Chess Board Generator!");
+                    Console.WriteLine("\nThank you for using the Chess Board Generator!");
                     return; // Exit program before generation a board.
             }
         }
