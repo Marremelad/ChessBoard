@@ -9,7 +9,7 @@ public abstract class Board
     {
         Console.WriteLine("\n Please enter desired board size.");
         int.TryParse(Console.ReadLine(), out int boardSize);
-        return boardSize is < 1 or > 8 ? boardSize : 8;
+        return boardSize is > 0 and < 9 ? boardSize : 8;
     }
 
     // Method to get custom tiles for the chess board from user input.
