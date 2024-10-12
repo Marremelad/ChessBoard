@@ -12,12 +12,6 @@ public class Menu
     
     private static string _placement = "A1"; // Default placement for the piece.
     
-    private static string _displayValues = $"Board Size: {_boardSize}\n" + // string to display the current values.
-                                           $"White Tiles: {_tiles.White}\n" +
-                                           $"Black Tiles {_tiles.Black}\n" +
-                                           $"Piece: {_piece}\n" +
-                                           $"Placement: {_placement.ToUpper()}";
-
     // Method to display the main menu and handle user choices.
     public static void MainMenu()
     {
@@ -44,8 +38,8 @@ public class Menu
         while (true)
         {
             Console.Clear(); // Clear the console for fresh display.
-            Console.WriteLine(_displayValues); // Display the current values that the generated board will have.
-            
+            Console.WriteLine($"Current Board Size: {_boardSize}\nWhite Tiles: {_tiles.White}\nBlack Tiles: {_tiles.Black}\nPiece: {_piece}: Placement: {_placement}"); // Display current board parameters.
+           
             var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("\nCustomize your board!") // Placeholder title for options menu.
