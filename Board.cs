@@ -1,13 +1,11 @@
 ﻿using System.Net;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace ChessBoard;
 
 public abstract class Board
 {
-    private static string? _whiteTile;
-    private static string? _blackTile;
-    
     public static int GetBoardSize()
     {
         Console.WriteLine("Please enter board size.");
@@ -20,26 +18,26 @@ public abstract class Board
         return boardSize;
     }
 
-    public static void GetCustomTiles()
+    public static (string, string) GetCustomTiles()
     {
         Console.WriteLine("Do you want custom tiles for your board? (y/n)");
         string? userInput = Console.ReadLine()?.ToLower();
 
         if (userInput != "y")
         {
-            _whiteTile = "◼";
-            _blackTile = "◻";
+            return ("◼", "◻");
+           
         }
-        else
-        {
-            Console.WriteLine("What should the white tiles be?");
-            string? customTile = Console.ReadLine();
-            _whiteTile = string.IsNullOrEmpty(customTile) ? "◼" : customTile;
+
+        string? customTile;
+        
+        Console.WriteLine("What should the white tiles be?");
+        string whiteTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◼" : customTile;
             
-            Console.WriteLine("What should the black tile be?");
-            customTile = Console.ReadLine();
-            _blackTile = string.IsNullOrEmpty(customTile) ? "◻" : customTile;
-        }
+        Console.WriteLine("What should the black tile be?");
+        string blackTile = string.IsNullOrEmpty(customTile = Console.ReadLine()) ? "◻" : customTile;
+
+        return (whiteTile, blackTile);
     }
 
     public static string GetCustomPiece()
@@ -68,7 +66,7 @@ public abstract class Board
         return placement;
     }
 
-    public static void GenerateChessBoard(int boardSize, string placement, string piece)
+    public static void GenerateChessBoard(int boardSize, string placement, string piece, (string, string) tiles)
     {
         for (int i = boardSize; i > 0; i--)
         { //Outer Loop (i): Iterates over the rows of the chessboard. Also makes sure that the chessboard is flipped correctly (a1 at the bottom left).
@@ -88,8 +86,8 @@ public abstract class Board
                 else
                 {
                     Console.Write((i + j) % 2 == 0
-                        ? _whiteTile
-                        : _blackTile); //Otherwise, it prints the white or black tile based on the current square’s position (alternating between them using (i + j) % 2).
+                        ? tiles.Item1
+                        : tiles.Item2); //Otherwise, it prints the white or black tile based on the current square’s position (alternating between them using (i + j) % 2).
                 }
             }
 
