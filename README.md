@@ -17,7 +17,8 @@ https://spectreconsole.net/ Link to the Spectre.Console website
 * .NET 8
 
 ### Get started
-If you are using Visual Studio or any other IDE with an integrated repo-cloning function use it with this URL: https://github.com/Marremelad/ChessBoard.git and run the program.
+If you are using Visual Studio or any other IDE with an integrated repo-cloning function use it with this URL: https://github.com/Marremelad/ChessBoard.git 
+and run the program.
 
 Else, do the following.
 * Open the terminal on your computer.
