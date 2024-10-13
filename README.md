@@ -71,13 +71,11 @@ Customize your board!
 #### Board generated with custom values
 ```console
 O X O X O
-X O X O X
+X O X 🙂 X
 O X O X O
 X O X O X
-O 7 O X O
+O X O X O
 ```
-
-
 
 
 
