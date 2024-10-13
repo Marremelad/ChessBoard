@@ -5,6 +5,8 @@ This is a C# application that lets the user generate a customized chess board in
 This application features an interactive menu built with the Spectre.Console library.
 The user can navigate through the menu with the up and down arrows and the enter key.
 
+https://spectreconsole.net/ Link to the Spectre.Console website
+
 ### Features
 * Change the board size - Choose a board size ranging from 1x1 to 8x8.
 * Custom tiles - Choose a custom character to represent the tiles.
@@ -53,7 +55,7 @@ Customize your board!
   Custom Piece       
   Piece Placement    
   Generate Board     
-  Ex
+  Exit
 ```
 #### Board generated with default values
 ```console
