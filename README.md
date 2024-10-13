@@ -7,7 +7,7 @@ The user can navigate through the menu with the up and down arrows and the enter
 
 ### Features
 * Change the board size - Choose a board size ranging from 1x1 to 8x8.
-* Custom Tiles - Choose a custom character to represent the tiles.
+* Custom tiles - Choose a custom character to represent the tiles.
 * Custom chess piece - Choose a custom character to represent the chess piece.
 * Piece Placement - Choose where to place your piece on the board.
 
