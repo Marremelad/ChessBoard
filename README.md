@@ -32,7 +32,7 @@ dotnet run
 
 ### Application Demo
 
-![Description of GIF](https://raw.githubusercontent.com/Marremelad/AssetsAndImages/main/Windows-PowerShell-2024-10-14-15-31-01.gif)
+<img src="https://user-images.githubusercontent.com/113366808/219718325-d25dd1a3-6030-4d81-8170-1c78bc9be229.gif" height="228" width="415" align="right">
 
 
 
