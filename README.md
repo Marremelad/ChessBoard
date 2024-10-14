@@ -32,7 +32,7 @@ dotnet run
 
 ### Application Demo
 
-<img src="https://github.com/Marremelad/AssetsAndImages/raw/main/Windows-PowerShell-2024-10-14-15-31-01.gif" height="300" width="500">
+<img src="https://github.com/Marremelad/AssetsAndImages/raw/main/ChessBoardScreenRecording.gif" height="300" width="500">
 
 
 
