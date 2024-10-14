@@ -16,7 +16,7 @@ The user can navigate through the menu with the up and down arrows and the enter
 
 ### Get started
 If you are using Visual Studio or any other IDE with an integrated repo-cloning function use it with this URL: https://github.com/Marremelad/ChessBoard.git 
-and run the program.
+open the solution and run the program.
 
 Else, do the following.
 * Open the terminal on your computer.
