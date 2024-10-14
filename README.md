@@ -32,49 +32,7 @@ dotnet run
 
 ### Application Demo
 
-#### Main menu
-```console
-Welcome to the Chess Board Generator!
-                                     
-> Generate board                     
-  Exit                               
-```
-#### Customization menu
-```console
-Current Board Size: 8
-White Tiles: ◼
-Black Tiles: ◻
-Piece: ♖
-Placement: A1
-                     
-Customize your board!
-                     
-> Board Size         
-  Custom Tiles       
-  Custom Piece       
-  Piece Placement    
-  Generate Board     
-  Exit
-```
-#### Board generated with default values
-```console
-◼ ◻ ◼ ◻ ◼ ◻ ◼ ◻
-◻ ◼ ◻ ◼ ◻ ◼ ◻ ◼
-◼ ◻ ◼ ◻ ◼ ◻ ◼ ◻
-◻ ◼ ◻ ◼ ◻ ◼ ◻ ◼
-◼ ◻ ◼ ◻ ◼ ◻ ◼ ◻
-◻ ◼ ◻ ◼ ◻ ◼ ◻ ◼
-◼ ◻ ◼ ◻ ◼ ◻ ◼ ◻
-♖ ◼ ◻ ◼ ◻ ◼ ◻ ◼
-```
-#### Board generated with custom values
-```console
-O X O X O
-X O X 🙂 X
-O X O X O
-X O X O X
-O X O X O
-```
+ <img src=" <img src="https://raw.githubusercontent.com/Marremelad/AssetsAndImages/main/Windows-PowerShell-2024-10-14-15-31-01.gif?token=GHSAT0AAAAAACXEGXJPBUMIN4RZUTB37FGOZYNFV6Q" alt="Application Demo" height="30" width="40" style="vertical-align: middle;" />" alt="Email" height="30" width="40" style="vertical-align: middle;" />
 
 
 
