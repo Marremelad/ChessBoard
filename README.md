@@ -2,10 +2,8 @@
 
 ## Description
 This is a C# application that lets the user generate a customized chess board in the console.
-This application features an interactive menu built with the Spectre.Console library.
+This application features an interactive menu built with the [Spectre.Console](https://spectreconsole.net/) library.
 The user can navigate through the menu with the up and down arrows and the enter key.
-
-https://spectreconsole.net/ Link to the Spectre.Console website
 
 ### Features
 * Change the board size - Choose a board size ranging from 1x1 to 8x8.
