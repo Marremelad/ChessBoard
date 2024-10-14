@@ -11,8 +11,10 @@ The user can navigate through the menu with the up and down arrows and the enter
 * Custom chess piece - Choose a custom character to represent the chess piece.
 * Piece Placement - Choose where to place your piece on the board.
 
+<img src="https://github.com/Marremelad/AssetsAndImages/raw/main/ChessBoardScreenRecording.gif" height="300" width="500">
+
 ### Requirements 
-* .NET 8
+* .NET 8 or higher
 
 ### Get started
 If you are using Visual Studio or any other IDE with an integrated repo-cloning function use it with this URL: https://github.com/Marremelad/ChessBoard.git 
@@ -30,9 +32,7 @@ git clone https://github.com/Marremelad/ChessBoard.git
 dotnet run
 ```
 
-### Application Demo
 
-<img src="https://github.com/Marremelad/AssetsAndImages/raw/main/ChessBoardScreenRecording.gif" height="300" width="500">
 
 
 
