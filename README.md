@@ -32,7 +32,8 @@ dotnet run
 
 ### Application Demo
 
- <img src=" <img src="https://raw.githubusercontent.com/Marremelad/AssetsAndImages/main/Windows-PowerShell-2024-10-14-15-31-01.gif?token=GHSAT0AAAAAACXEGXJPBUMIN4RZUTB37FGOZYNFV6Q" alt="Application Demo" height="30" width="40" style="vertical-align: middle;" />" alt="Email" height="30" width="40" style="vertical-align: middle;" />
+![Description of GIF](https://raw.githubusercontent.com/Marremelad/AssetsAndImages/main/Windows-PowerShell-2024-10-14-15-31-01.gif)
+
 
 
 
