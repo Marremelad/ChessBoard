@@ -1,4 +1,4 @@
-# ChessBoard Console Application
+# ChessBoard Console Application ♕ ♞ ♖
 
 ## Description
 This is a C# application that lets the user generate a customized chess board in the console.
